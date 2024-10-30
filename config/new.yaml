@@ -1,0 +1,44 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000
+    use_sim_time: true
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    milltap_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+milltap_controller:
+  ros__parameters:
+    command_interfaces:
+      - position  
+    state_interfaces:
+      - position
+      - velocity
+    joints:
+      - joint_x
+      - joint_y
+      - joint_z
+      - joint_a
+      - joint_c
+
+    constraints:
+      goal_time: 1.0
+      stopped_velocity_tolerance: 0.01
+      joints:
+        joint_x:
+          position_min: 0.0     # X-axis: 0 to 700 mm
+          position_max: 700.0
+        joint_y:
+          position_min: 0.0     # Y-axis: 0 to 420 mm
+          position_max: 420.0
+        joint_z:
+          position_min: 0.0     # Z-axis: 0 to 380 mm
+          position_max: 380.0
+        joint_a:
+          position_min: -100.0  # A-axis: -100° to +120°
+          position_max: 120.0
+        joint_c:
+          position_min: 0.0     # C-axis: 0 to N*360° (assuming 360° rotation with no limit)
+          position_max: 360.0
