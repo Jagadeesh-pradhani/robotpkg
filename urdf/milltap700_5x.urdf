@@ -1,0 +1,388 @@
+<robot name="milltap700_5x">
+
+
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00013489 -0.10106 0.44931"
+        rpy="0 0 0" />
+      <mass
+        value="300.56" />
+      <inertia
+        ixx="55.364"
+        ixy="0.019209"
+        ixz="0.03756"
+        iyy="86.048"
+        iyz="9.0669"
+        izz="84.244" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/intel/ws2/src/robotpkg/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision name="base_link_collision">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/intel/ws2/src/robotpkg/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="-0.2431 -0.097522 -0.092146"
+        rpy="0 0 0" />
+      <mass
+        value="43.248" />
+      <inertia
+        ixx="1.9569"
+        ixy="-0.40171"
+        ixz="-0.28142"
+        iyy="1.7014"
+        iyz="-0.15841"
+        izz="2.1239" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/intel/ws2/src/robotpkg/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision name="link2_collision">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/intel/ws2/src/robotpkg/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="prismatic">
+    <origin
+      xyz="0.53857 0.36931 0.81139"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.35"
+      upper="0.35"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="-0.073479 0.00058944 -0.11267"
+        rpy="0 0 0" />
+      <mass
+        value="18.961" />
+      <inertia
+        ixx="0.23328"
+        ixy="0.00044792"
+        ixz="-0.060078"
+        iyy="0.33042"
+        iyz="-0.00011649"
+        izz="0.35839" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/intel/ws2/src/robotpkg/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision name="link3_collision">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/intel/ws2/src/robotpkg/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="continuous">
+    <origin
+      xyz="-0.352 0.044147 0.042605"
+      rpy="0 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.74533"
+      upper="2.0944"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="-6.4847E-09 0.00011342 -0.022694"
+        rpy="0 0 0" />
+      <mass
+        value="1.3915" />
+      <inertia
+        ixx="0.0054367"
+        ixy="7.9418E-05"
+        ixz="3.9711E-07"
+        iyy="0.0054241"
+        iyz="-2.5206E-05"
+        izz="0.010468" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/intel/ws2/src/robotpkg/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision name="link4_collision">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/intel/ws2/src/robotpkg/meshes/link4.STL" />
+      </geometry>
+    </collision>
+ 
+  </link>
+  <joint
+    name="joint4"
+    type="continuous">
+    <origin
+      xyz="-0.19 6.7961E-05 -0.0136"
+      rpy="0 0 0" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 -0.0049972 0.99999" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="-0.00029523 0.51117 -0.071304"
+        rpy="0 0 0" />
+      <mass
+        value="68.756" />
+      <inertia
+        ixx="9.2809"
+        ixy="-0.0155"
+        ixz="-0.0040996"
+        iyy="5.9891"
+        iyz="-1.9048"
+        izz="5.7654" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/intel/ws2/src/robotpkg/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision name="link5_collision">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/intel/ws2/src/robotpkg/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="prismatic">
+    <origin
+      xyz="0 -0.41805 1.6133"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.21"
+      upper="0.21"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="-0.0056632 -0.018338 -0.047429"
+        rpy="0 0 0" />
+      <mass
+        value="10.967" />
+      <inertia
+        ixx="0.25756"
+        ixy="0.00050087"
+        ixz="-0.00081028"
+        iyy="0.29163"
+        iyz="0.025363"
+        izz="0.10966" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/intel/ws2/src/robotpkg/meshes/link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision name="link6_collision">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/intel/ws2/src/robotpkg/meshes/link6.STL" />
+      </geometry>
+    </collision>
+
+    
+    
+  </link>
+  <joint
+    name="joint6"
+    type="prismatic">
+    <origin
+      xyz="0 0.80906 -0.29154"
+      rpy="0 0 0" />
+    <parent
+      link="link5" />
+    <child
+      link="link6" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0.38"
+      effort="100"
+      velocity="100" />
+  </joint>
+
+
+
+  <ros2_control name="GazeboSimSystem" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware> 
+    <joint name="joint2">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>  
+    </joint> 
+    <joint name="joint3">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>  
+    </joint> 
+    <joint name="joint4">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/> 
+    </joint> 
+    <joint name="joint5">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/> 
+    </joint>
+    <joint name="joint6">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>  
+    </joint>          
+  </ros2_control>
+
+  <gazebo>
+    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+      <parameters>/home/intel/ws2/src/robotpkg/config/milltap700_5x.yaml</parameters> 
+    </plugin>       
+  </gazebo> 
+</robot>

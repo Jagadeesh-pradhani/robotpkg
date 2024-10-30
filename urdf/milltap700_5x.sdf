@@ -1,0 +1,295 @@
+<sdf version='1.7'>
+  <model name='milltap700_5x'>
+    <link name='base_link'>
+      <inertial>
+        <pose>-0.000135 -0.10106 0.44931 0 -0 0</pose>
+        <mass>300.56</mass>
+        <inertia>
+          <ixx>55.364</ixx>
+          <ixy>0.019209</ixy>
+          <ixz>0.03756</ixz>
+          <iyy>86.048</iyy>
+          <iyz>9.0669</iyz>
+          <izz>84.244</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/intel/ws2/src/robotpkg/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/intel/ws2/src/robotpkg/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint2' type='prismatic'>
+      <pose relative_to='base_link'>0.53857 0.36931 0.81139 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>link2</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.35</lower>
+          <upper>0.35</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link2'>
+      <pose relative_to='joint2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.2431 -0.097522 -0.092146 0 -0 0</pose>
+        <mass>43.248</mass>
+        <inertia>
+          <ixx>1.9569</ixx>
+          <ixy>-0.40171</ixy>
+          <ixz>-0.28142</ixz>
+          <iyy>1.7014</iyy>
+          <iyz>-0.15841</iyz>
+          <izz>2.1239</izz>
+        </inertia>
+      </inertial>
+      <collision name='link2_collision_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/intel/ws2/src/robotpkg/meshes/link2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/intel/ws2/src/robotpkg/meshes/link2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint3' type='revolute'>
+      <pose relative_to='link2'>-0.352 0.044147 0.042605 0 -0 0</pose>
+      <parent>link2</parent>
+      <child>link3</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <effort>100</effort>
+          <velocity>100</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link3'>
+      <pose relative_to='joint3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.073479 0.000589 -0.11267 0 -0 0</pose>
+        <mass>18.961</mass>
+        <inertia>
+          <ixx>0.23328</ixx>
+          <ixy>0.00044792</ixy>
+          <ixz>-0.060078</ixz>
+          <iyy>0.33042</iyy>
+          <iyz>-0.00011649</iyz>
+          <izz>0.35839</izz>
+        </inertia>
+      </inertial>
+      <collision name='link3_collision_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/intel/ws2/src/robotpkg/meshes/link3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/intel/ws2/src/robotpkg/meshes/link3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint4' type='revolute'>
+      <pose relative_to='link3'>-0.19 6.8e-05 -0.0136 0 -0 0</pose>
+      <parent>link3</parent>
+      <child>link4</child>
+      <axis>
+        <xyz>0 -0.004997 0.99999</xyz>
+        <limit>
+          <effort>100</effort>
+          <velocity>100</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link4'>
+      <pose relative_to='joint4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0.000113 -0.022694 0 -0 0</pose>
+        <mass>1.3915</mass>
+        <inertia>
+          <ixx>0.0054367</ixx>
+          <ixy>7.9418e-05</ixy>
+          <ixz>3.9711e-07</ixz>
+          <iyy>0.0054241</iyy>
+          <iyz>-2.5206e-05</iyz>
+          <izz>0.010468</izz>
+        </inertia>
+      </inertial>
+      <collision name='link4_collision_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/intel/ws2/src/robotpkg/meshes/link4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link4_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/intel/ws2/src/robotpkg/meshes/link4.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint5' type='prismatic'>
+      <pose relative_to='base_link'>0 -0.41805 1.6133 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>link5</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-0.21</lower>
+          <upper>0.21</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link5'>
+      <pose relative_to='joint5'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.000295 0.51117 -0.071304 0 -0 0</pose>
+        <mass>68.756</mass>
+        <inertia>
+          <ixx>9.2809</ixx>
+          <ixy>-0.0155</ixy>
+          <ixz>-0.0040996</ixz>
+          <iyy>5.9891</iyy>
+          <iyz>-1.9048</iyz>
+          <izz>5.7654</izz>
+        </inertia>
+      </inertial>
+      <collision name='link5_collision_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/intel/ws2/src/robotpkg/meshes/link5.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link5_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/intel/ws2/src/robotpkg/meshes/link5.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint6' type='prismatic'>
+      <pose relative_to='link5'>0 0.80906 -0.29154 0 -0 0</pose>
+      <parent>link5</parent>
+      <child>link6</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.38</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link6'>
+      <pose relative_to='joint6'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.005663 -0.018338 -0.047429 0 -0 0</pose>
+        <mass>10.967</mass>
+        <inertia>
+          <ixx>0.25756</ixx>
+          <ixy>0.00050087</ixy>
+          <ixz>-0.00081028</ixz>
+          <iyy>0.29163</iyy>
+          <iyz>0.025363</iyz>
+          <izz>0.10966</izz>
+        </inertia>
+      </inertial>
+      <collision name='link6_collision_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/intel/ws2/src/robotpkg/meshes/link6.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link6_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>/home/intel/ws2/src/robotpkg/meshes/link6.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <static>0</static>
+    <plugin name='gazebo_ros2_control' filename='libgazebo_ros2_control.so'>
+      <parameters>/home/intel/ws2/src/robotpkg/config/milltap700_5x.yaml</parameters>
+    </plugin>
+  </model>
+</sdf>

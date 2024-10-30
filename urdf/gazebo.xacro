@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  >
+   
+    <!-- <gazebo reference="link_1">
+        <material>Gazebo/Green</material>
+        <sensor name="link1_contact_sensor" type="contact">
+            <always_on>true</always_on>
+            <contact>
+                <collision>link_1_collision_collision</collision>
+            </contact>
+            <update_rate>1</update_rate>
+            <plugin name="link1_bumper_plugin" filename="libgazebo_ros_bumper.so">
+                <frame_name>world</frame_name>
+                <bumperTopicName>link1_bumper</bumperTopicName>
+                <ros>
+                    <remapping>bumper_states:=link1_bumper_states</remapping>
+                </ros>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="link_2">
+        <material>Gazebo/Blue</material>
+        <sensor name="link2_contact_sensor" type="contact">
+            <always_on>true</always_on>
+            <contact>
+                <collision>link_2_collision_collision</collision>
+            </contact>
+            <update_rate>1</update_rate>
+            <plugin name="link2_bumper_plugin" filename="libgazebo_ros_bumper.so">
+                <frame_name>world</frame_name>
+                <bumperTopicName>link2_bumper</bumperTopicName>
+                <ros>
+                    <remapping>bumper_states:=link2_bumper_states</remapping>
+                </ros>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="link_3">
+        <material>Gazebo/Orange</material>
+        <sensor name="link3_contact_sensor" type="contact">
+            <always_on>true</always_on>
+            <contact>
+                <collision>link_3_collision_collision</collision>
+            </contact>
+            <update_rate>1</update_rate>
+            <plugin name="link3_bumper_plugin" filename="libgazebo_ros_bumper.so">
+                <frame_name>world</frame_name>
+                <bumperTopicName>link3_bumper</bumperTopicName>
+                <ros>
+                    <remapping>bumper_states:=link3_bumper_states</remapping>
+                </ros>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="link_4">
+        <material>Gazebo/White</material>
+        <sensor name="link4_contact_sensor" type="contact">
+            <always_on>true</always_on>
+            <contact>
+                <collision>link_4_collision_collision</collision>
+            </contact>
+            <update_rate>1</update_rate>
+            <plugin name="link4_bumper_plugin" filename="libgazebo_ros_bumper.so">
+                <frame_name>world</frame_name>
+                <bumperTopicName>link4_bumper</bumperTopicName>
+                <ros>
+                    <remapping>bumper_states:=link4_bumper_states</remapping>
+                </ros>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="link_5">
+        <material>Gazebo/Yellow</material>
+        <sensor name="link5_contact_sensor" type="contact">
+            <always_on>true</always_on>
+            <contact>
+                <collision>link_5_collision_collision</collision>
+            </contact>
+            <update_rate>1</update_rate>
+            <plugin name="link5_bumper_plugin" filename="libgazebo_ros_bumper.so">
+                <frame_name>world</frame_name>
+                <bumperTopicName>link5_bumper</bumperTopicName>
+                <ros>
+                    <remapping>bumper_states:=link5_bumper_states</remapping>
+                </ros>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="link_6">
+        <material>Gazebo/Purple</material>
+        <sensor name="link6_contact_sensor" type="contact">
+            <always_on>true</always_on>
+            <contact>
+                <collision>link_6_collision_collision</collision>
+            </contact>
+            <update_rate>1</update_rate>
+            <plugin name="link6_bumper_plugin" filename="libgazebo_ros_bumper.so">
+                <frame_name>world</frame_name>
+                <bumperTopicName>link6_bumper</bumperTopicName>
+                <ros>
+                    <remapping>bumper_states:=link6_bumper_states</remapping>
+                </ros>
+            </plugin>
+        </sensor>
+    </gazebo> -->
+
+
+
+    <ros2_control name="GazeboSimSystem" type="system">
+        <hardware>
+        <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware> 
+        <joint name="joint2">
+        <command_interface name="position"/>
+        <state_interface name="position">
+            <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity"/>  
+        </joint> 
+        <joint name="joint3">
+        <command_interface name="position"/>
+        <state_interface name="position">
+            <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity"/>  
+        </joint> 
+        <joint name="joint4">
+        <command_interface name="position"/>
+        <state_interface name="position">
+            <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity"/> 
+        </joint> 
+        <joint name="joint5">
+        <command_interface name="position"/>
+        <state_interface name="position">
+            <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity"/> 
+        </joint>
+        <joint name="joint6">
+        <command_interface name="position"/>
+        <state_interface name="position">
+            <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity"/>  
+        </joint>          
+    </ros2_control>
+
+  <gazebo>
+    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+      <parameters>/home/intel/ws2/src/robotpkg/config/milltap700_5x.yaml</parameters> 
+    </plugin>       
+  </gazebo> 
+
+</robot>
